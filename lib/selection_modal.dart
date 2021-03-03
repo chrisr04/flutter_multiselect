@@ -40,6 +40,7 @@ class SelectionModal extends StatefulWidget {
   final String searchBoxToolTipText;
   final Color backgroundColor;
   final Color textItemColor;
+  final Color textColorChip;
 
   SelectionModal(
       {this.filterable,
@@ -70,6 +71,7 @@ class SelectionModal extends StatefulWidget {
       this.backgroundColor,
       this.textItemColor,
       this.selectedOptionsInfoTextColor,
+      this.textColorChip,
       this.checkedIcon,
       this.uncheckedIcon,
       this.checkBoxColor,
@@ -238,11 +240,11 @@ class _SelectionModalState extends State<SelectionModal> {
         label: new Container(
           constraints: new BoxConstraints(
               maxWidth: MediaQuery.of(context).size.width - 80.0),
-          child: Text(existingItem['text'], overflow: TextOverflow.ellipsis),
+          child: Text(existingItem['text'], overflow: TextOverflow.ellipsis, style: TextStyle(color: widget.textColorChip)),
         ),
         deleteButtonTooltipMessage:
             widget.deleteButtonTooltipText ?? 'Tap to delete this item',
-        deleteIcon: Icon(widget.deleteIcon) ?? Icon(Icons.cancel),
+        deleteIcon: Icon(widget.deleteIcon, color: widget.textColorChip) ?? Icon(Icons.cancel, color: widget.textColorChip),
         deleteIconColor: widget.deleteIconColor ?? Colors.grey,
         onDeleted: () {
           existingItem['checked'] = false;
