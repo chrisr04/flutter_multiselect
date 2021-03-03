@@ -40,7 +40,7 @@ class SelectionModal extends StatefulWidget {
   final String searchBoxToolTipText;
   final Color backgroundColor;
   final Color textItemColor;
-  
+
   SelectionModal(
       {this.filterable,
       this.dataSource,
@@ -156,6 +156,7 @@ class _SelectionModalState extends State<SelectionModal> {
                   ButtonTheme(
                     height: 50.0,
                     child: RaisedButton.icon(
+                      shape: StadiumBorder(),
                       label: Text(widget.cancelButtonText ?? 'Cancel'),
                       icon: Icon(
                         widget.cancelButtonIcon ?? Icons.clear,
@@ -171,6 +172,7 @@ class _SelectionModalState extends State<SelectionModal> {
                   ButtonTheme(
                     height: 50.0,
                     child: RaisedButton.icon(
+                      shape: StadiumBorder(),
                       label: Text(widget.clearButtonText ?? 'Clear All'),
                       icon: Icon(
                         widget.clearButtonIcon ?? Icons.clear,
@@ -186,6 +188,7 @@ class _SelectionModalState extends State<SelectionModal> {
                   ButtonTheme(
                     height: 50.0,
                     child: RaisedButton.icon(
+                      shape: StadiumBorder(),
                       label: Text(widget.saveButtonText ?? 'Save'),
                       icon: Icon(
                         widget.saveButtonIcon ?? Icons.save,
