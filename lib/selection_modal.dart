@@ -154,7 +154,7 @@ class _SelectionModalState extends State<SelectionModal> {
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
                   ButtonTheme(
-                    height: 50.0,
+                    height: 30.0,
                     child: RaisedButton.icon(
                       shape: StadiumBorder(),
                       label: Text(widget.cancelButtonText ?? 'Cancel'),
@@ -170,7 +170,7 @@ class _SelectionModalState extends State<SelectionModal> {
                     ),
                   ),
                   ButtonTheme(
-                    height: 50.0,
+                    height: 30.0,
                     child: RaisedButton.icon(
                       shape: StadiumBorder(),
                       label: Text(widget.clearButtonText ?? 'Clear All'),
@@ -186,7 +186,7 @@ class _SelectionModalState extends State<SelectionModal> {
                     ),
                   ),
                   ButtonTheme(
-                    height: 50.0,
+                    height: 30.0,
                     child: RaisedButton.icon(
                       shape: StadiumBorder(),
                       label: Text(widget.saveButtonText ?? 'Save'),
