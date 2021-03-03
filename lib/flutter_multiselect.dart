@@ -135,8 +135,7 @@ class MultiSelect extends FormField<dynamic> {
                         orElse: () => null);
                     if (existingItem != null) {
                       selectedOptions.add(Chip(
-                        label: Text(existingItem[textField],
-                            overflow: TextOverflow.ellipsis),
+                        label: Text(existingItem[textField], style: TextStyle(color: textColorChipModal), overflow: TextOverflow.ellipsis),
                       ));
                     }
                   });

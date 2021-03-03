@@ -125,7 +125,7 @@ class _SelectionModalState extends State<SelectionModal> {
     return AppBar(
       leading: Container(),
       elevation: 0.0,
-      title: Text(widget.title, style: TextStyle(fontSize: 16.0)),
+      title: Text(widget.title),
       actions: <Widget>[
         IconButton(
           icon: Icon(
@@ -156,7 +156,7 @@ class _SelectionModalState extends State<SelectionModal> {
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
                   ButtonTheme(
-                    height: 30.0,
+                    height: 38.0,
                     child: RaisedButton.icon(
                       shape: StadiumBorder(),
                       label: Text(widget.cancelButtonText ?? 'Cancel'),
@@ -172,7 +172,7 @@ class _SelectionModalState extends State<SelectionModal> {
                     ),
                   ),
                   ButtonTheme(
-                    height: 30.0,
+                    height: 38.0,
                     child: RaisedButton.icon(
                       shape: StadiumBorder(),
                       label: Text(widget.clearButtonText ?? 'Clear All'),
