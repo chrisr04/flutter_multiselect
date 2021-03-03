@@ -20,7 +20,6 @@ class SelectionModal extends StatefulWidget {
   final IconData saveButtonIcon;
   final Color saveButtonColor;
   final Color saveButtonTextColor;
-  final Color backgroundColorModal;
   final String clearButtonText;
   final IconData clearButtonIcon;
   final Color clearButtonColor;
@@ -39,6 +38,9 @@ class SelectionModal extends StatefulWidget {
   final Color searchBoxFillColor;
   final IconData searchBoxIcon;
   final String searchBoxToolTipText;
+  final Color backgroundColor;
+  final Color textItemColor;
+  
   SelectionModal(
       {this.filterable,
       this.dataSource,
@@ -65,7 +67,8 @@ class SelectionModal extends StatefulWidget {
       this.deleteIconColor,
       this.selectedOptionsBoxColor,
       this.selectedOptionsInfoText,
-      this.backgroundColorModal,
+      this.backgroundColor,
+      this.textItemColor,
       this.selectedOptionsInfoTextColor,
       this.checkedIcon,
       this.uncheckedIcon,
@@ -284,7 +287,7 @@ class _SelectionModalState extends State<SelectionModal> {
     _searchresult.forEach((item) {
       options.add(ListTile(
           selected: true,
-          title: Text(item['text'] ?? ''),
+          title: Text(item['text'] ?? '', style: TextStyle(color: widget.textItemColor)),
           leading: Transform.scale(
             child: Icon(
                 item['checked']
@@ -346,7 +349,7 @@ class _SelectionModalState extends State<SelectionModal> {
   Widget build(BuildContext context) {
     return new Scaffold(
       key: globalKey,
-      backgroundColor: widget.backgroundColorModal
+      backgroundColor: widget.backgroundColor,
       appBar: _buildAppBar(context),
       body: _buildBody(context),
     );
