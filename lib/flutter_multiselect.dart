@@ -56,6 +56,8 @@ class MultiSelect extends FormField<dynamic> {
   final Color searchBoxFillColor;
   final IconData searchBoxIcon;
   final String searchBoxToolTipText;
+  final Color backgroundColorModal;
+
   MultiSelect(
       {FormFieldSetter<dynamic> onSaved,
       FormFieldValidator<dynamic> validator,
@@ -84,6 +86,7 @@ class MultiSelect extends FormField<dynamic> {
       this.errorBorderColor = Colors.red,
       this.enabledBorderColor = Colors.grey,
       this.selectIcon = Icons.arrow_downward,
+      this.backgroundColorModal = Colors.white,
       this.selectIconColor,
       this.buttonBarColor,
       this.cancelButtonText,
@@ -145,6 +148,7 @@ class MultiSelect extends FormField<dynamic> {
                         MaterialPageRoute<dynamic>(
                           builder: (BuildContext context) => SelectionModal(
                               title: titleText,
+                              backgroundColorModal: backgroundColorModal,
                               filterable: filterable,
                               valueField: valueField,
                               textField: textField,

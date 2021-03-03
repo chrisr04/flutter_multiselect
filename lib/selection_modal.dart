@@ -20,6 +20,7 @@ class SelectionModal extends StatefulWidget {
   final IconData saveButtonIcon;
   final Color saveButtonColor;
   final Color saveButtonTextColor;
+  final Color backgroundColorModal;
   final String clearButtonText;
   final IconData clearButtonIcon;
   final Color clearButtonColor;
@@ -64,6 +65,7 @@ class SelectionModal extends StatefulWidget {
       this.deleteIconColor,
       this.selectedOptionsBoxColor,
       this.selectedOptionsInfoText,
+      this.backgroundColorModal,
       this.selectedOptionsInfoTextColor,
       this.checkedIcon,
       this.uncheckedIcon,
@@ -234,7 +236,7 @@ class _SelectionModalState extends State<SelectionModal> {
         ),
         deleteButtonTooltipMessage:
             widget.deleteButtonTooltipText ?? 'Tap to delete this item',
-        deleteIcon: widget.deleteIcon ?? Icon(Icons.cancel),
+        deleteIcon: Icon(widget.deleteIcon) ?? Icon(Icons.cancel),
         deleteIconColor: widget.deleteIconColor ?? Colors.grey,
         onDeleted: () {
           existingItem['checked'] = false;
@@ -344,6 +346,7 @@ class _SelectionModalState extends State<SelectionModal> {
   Widget build(BuildContext context) {
     return new Scaffold(
       key: globalKey,
+      backgroundColor: widget.backgroundColorModal
       appBar: _buildAppBar(context),
       body: _buildBody(context),
     );
