@@ -135,6 +135,7 @@ class MultiSelect extends FormField<dynamic> {
                         orElse: () => null);
                     if (existingItem != null) {
                       selectedOptions.add(Chip(
+                        backgroundColor: checkBoxColor,
                         label: Text(existingItem[textField], style: TextStyle(color: textColorChipModal), overflow: TextOverflow.ellipsis),
                       ));
                     }
@@ -178,8 +179,7 @@ class MultiSelect extends FormField<dynamic> {
                               deleteIconColor: deleteIconColor,
                               selectedOptionsBoxColor: selectedOptionsBoxColor,
                               selectedOptionsInfoText: selectedOptionsInfoText,
-                              selectedOptionsInfoTextColor:
-                                  selectedOptionsInfoTextColor,
+                              selectedOptionsInfoTextColor: selectedOptionsInfoTextColor,
                               checkedIcon: checkedIcon,
                               uncheckedIcon: uncheckedIcon,
                               checkBoxColor: checkBoxColor,
