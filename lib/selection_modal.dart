@@ -246,7 +246,7 @@ class _SelectionModalState extends State<SelectionModal> {
         ),
         deleteButtonTooltipMessage:
             widget.deleteButtonTooltipText ?? 'Tap to delete this item',
-        deleteIcon: Icon(widget.deleteIcon, color: widget.textColorChip) ?? Icon(Icons.cancel, color: widget.textColorChip),
+        deleteIcon: Icon(widget.deleteIcon, color: widget.textColorChip, size: 18.0) ?? Icon(Icons.cancel, color: widget.textColorChip, size: 18.0),
         deleteIconColor: widget.deleteIconColor ?? Colors.grey,
         onDeleted: () {
           existingItem['checked'] = false;
