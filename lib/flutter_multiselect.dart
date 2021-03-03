@@ -231,9 +231,10 @@ class MultiSelect extends FormField<dynamic> {
                               Expanded(
                                 child: RichText(
                                   text: TextSpan(
-                                      text: titleText,
+                                      text: '$titleText:',
                                       style: TextStyle(
                                           fontSize: 16.0,
+                                          fontWeight: FontWeight.bold,
                                           color: titleTextColor ??
                                               Theme.of(state.context)
                                                   .primaryColor),

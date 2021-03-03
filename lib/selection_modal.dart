@@ -125,6 +125,7 @@ class _SelectionModalState extends State<SelectionModal> {
     return AppBar(
       leading: Container(),
       elevation: 0.0,
+      backgroundColor: widget.backgroundColor,
       title: Text(widget.title),
       actions: <Widget>[
         IconButton(
@@ -188,7 +189,7 @@ class _SelectionModalState extends State<SelectionModal> {
                     ),
                   ),
                   ButtonTheme(
-                    height: 30.0,
+                    height: 38.0,
                     child: RaisedButton.icon(
                       shape: StadiumBorder(),
                       label: Text(widget.saveButtonText ?? 'Save'),
@@ -237,6 +238,7 @@ class _SelectionModalState extends State<SelectionModal> {
       var existingItem = _localDataSourceWithState
           .singleWhere((itm) => itm['value'] == item, orElse: () => null);
       selectedOptions.add(Chip(
+        backgroundColor: widget.checkBoxColor,
         label: new Container(
           constraints: new BoxConstraints(
               maxWidth: MediaQuery.of(context).size.width - 80.0),
@@ -262,7 +264,7 @@ class _SelectionModalState extends State<SelectionModal> {
               children: <Widget>[
                 new Text(
                   widget.selectedOptionsInfoText ??
-                      'Currently selected ${selectedOptions.length} items (tap to remove)', // use languageService here
+                      'Elementos seleccionados: ${selectedOptions.length}', // use languageService here
                   style: TextStyle(
                       color:
                           widget.selectedOptionsInfoTextColor ?? Colors.black87,
