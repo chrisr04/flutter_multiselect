@@ -41,6 +41,9 @@ class SelectionModal extends StatefulWidget {
   final Color backgroundColor;
   final Color textItemColor;
   final Color textColorChip;
+  final double cancelIconSize;
+  final double saveIconSize;
+  final double clearIconSize;
 
   SelectionModal(
       {this.filterable,
@@ -79,6 +82,9 @@ class SelectionModal extends StatefulWidget {
       this.searchBoxHintText,
       this.searchBoxFillColor,
       this.searchBoxIcon,
+      this.cancelIconSize,
+      this.saveIconSize,
+      this.clearIconSize,
       this.searchBoxToolTipText})
       : super();
 }
@@ -151,19 +157,34 @@ class _SelectionModalState extends State<SelectionModal> {
           ),
           _currentlySelectedOptions(),
           Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(
+              vertical: 10.0,
+              horizontal: 5.0
+            ),
             color: widget.buttonBarColor ?? Colors.grey.shade600,
-            child: ButtonBar(
-                alignment: MainAxisAlignment.spaceBetween,
-                mainAxisSize: MainAxisSize.max,
+            child: Wrap(
+                alignment: WrapAlignment.spaceEvenly,
+                runAlignment: WrapAlignment.center,
+                direction: Axis.horizontal,
                 children: <Widget>[
                   ButtonTheme(
                     height: 38.0,
-                    child: RaisedButton.icon(
+                    child: RaisedButton(
                       shape: StadiumBorder(),
-                      label: Text(widget.cancelButtonText ?? 'Cancel'),
-                      icon: Icon(
-                        widget.cancelButtonIcon ?? Icons.clear,
-                        size: 20.0,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            widget.cancelButtonIcon ?? Icons.clear,
+                            size: widget.cancelIconSize?? 20.0,
+                          ),
+                          SizedBox(
+                            width: 3.0,
+                          ),
+                          Text(widget.cancelButtonText ?? 'Cancel')
+                        ],
                       ),
                       color: widget.cancelButtonColor ?? Colors.grey.shade100,
                       textColor: widget.cancelButtonTextColor,
@@ -174,12 +195,21 @@ class _SelectionModalState extends State<SelectionModal> {
                   ),
                   ButtonTheme(
                     height: 38.0,
-                    child: RaisedButton.icon(
+                    child: RaisedButton(
                       shape: StadiumBorder(),
-                      label: Text(widget.clearButtonText ?? 'Clear All'),
-                      icon: Icon(
-                        widget.clearButtonIcon ?? Icons.clear,
-                        size: 20.0,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            widget.clearButtonIcon ?? Icons.clear,
+                            size: widget.clearIconSize?? 20.0,
+                          ),
+                          SizedBox(
+                            width: 10.0,
+                          ),
+                          Text(widget.clearButtonText ?? 'Clear All')
+                        ],
                       ),
                       color: widget.clearButtonColor ?? Colors.black,
                       textColor: widget.clearButtonTextColor,
@@ -190,12 +220,21 @@ class _SelectionModalState extends State<SelectionModal> {
                   ),
                   ButtonTheme(
                     height: 38.0,
-                    child: RaisedButton.icon(
+                    child: RaisedButton(
                       shape: StadiumBorder(),
-                      label: Text(widget.saveButtonText ?? 'Save'),
-                      icon: Icon(
-                        widget.saveButtonIcon ?? Icons.save,
-                        size: 20.0,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            widget.saveButtonIcon ?? Icons.save,
+                            size: widget.saveIconSize?? 20.0,
+                          ),
+                          SizedBox(
+                            width: 3.0,
+                          ),
+                          Text(widget.saveButtonText ?? 'Save')
+                        ],
                       ),
                       color: widget.saveButtonColor ??
                           Theme.of(context).primaryColor,

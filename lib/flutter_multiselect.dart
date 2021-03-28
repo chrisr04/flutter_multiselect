@@ -34,12 +34,15 @@ class MultiSelect extends FormField<dynamic> {
   final IconData cancelButtonIcon;
   final Color cancelButtonColor;
   final Color cancelButtonTextColor;
+  final double cancelIconSize;
   final String saveButtonText;
   final IconData saveButtonIcon;
   final Color saveButtonColor;
   final Color saveButtonTextColor;
+  final double saveIconSize;
   final String clearButtonText;
   final IconData clearButtonIcon;
+  final double clearIconSize;
   final Color clearButtonColor;
   final Color clearButtonTextColor;
   final String deleteButtonTooltipText;
@@ -118,6 +121,9 @@ class MultiSelect extends FormField<dynamic> {
       this.searchBoxHintText,
       this.searchBoxFillColor,
       this.searchBoxIcon,
+      this.clearIconSize,
+      this.saveIconSize,
+      this.cancelIconSize,
       this.searchBoxToolTipText})
       : super(
             onSaved: onSaved,
@@ -166,14 +172,17 @@ class MultiSelect extends FormField<dynamic> {
                               cancelButtonIcon: cancelButtonIcon,
                               cancelButtonColor: cancelButtonColor,
                               cancelButtonTextColor: cancelButtonTextColor,
+                              cancelIconSize: cancelIconSize,
                               saveButtonText: saveButtonText,
                               saveButtonIcon: saveButtonIcon,
                               saveButtonColor: saveButtonColor,
+                              saveIconSize: saveIconSize,
                               saveButtonTextColor: saveButtonTextColor,
                               clearButtonText: clearButtonText,
                               clearButtonIcon: clearButtonIcon,
                               clearButtonColor: clearButtonColor,
                               clearButtonTextColor: clearButtonTextColor,
+                              clearIconSize: clearIconSize,
                               deleteButtonTooltipText: deleteButtonTooltipText,
                               deleteIcon: deleteIcon,
                               deleteIconColor: deleteIconColor,
