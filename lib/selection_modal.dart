@@ -129,18 +129,19 @@ class _SelectionModalState extends State<SelectionModal> {
 
   Widget _buildAppBar(BuildContext context) {
     return AppBar(
-      leading: Container(),
+      automaticallyImplyLeading: false,
       elevation: 0.0,
       backgroundColor: widget.backgroundColor,
       title: Text(widget.title),
+      leadingWidth: 0.0,
       actions: <Widget>[
         IconButton(
           icon: Icon(
-            Icons.close,
-            size: 26.0,
+            widget.clearButtonIcon ?? Icons.clear,
+            size: widget.clearIconSize?? 20.0,
           ),
           onPressed: () {
-            Navigator.pop(context, null);
+            _clearSelection();
           },
         ),
       ],
@@ -160,13 +161,12 @@ class _SelectionModalState extends State<SelectionModal> {
             width: double.infinity,
             padding: EdgeInsets.symmetric(
               vertical: 10.0,
-              horizontal: 5.0
+              horizontal: 10.0
             ),
             color: widget.buttonBarColor ?? Colors.grey.shade600,
-            child: Wrap(
-                alignment: WrapAlignment.spaceEvenly,
-                runAlignment: WrapAlignment.center,
-                direction: Axis.horizontal,
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   ButtonTheme(
                     height: 38.0,
@@ -190,31 +190,6 @@ class _SelectionModalState extends State<SelectionModal> {
                       textColor: widget.cancelButtonTextColor,
                       onPressed: () {
                         Navigator.pop(context, null);
-                      },
-                    ),
-                  ),
-                  ButtonTheme(
-                    height: 38.0,
-                    child: RaisedButton(
-                      shape: StadiumBorder(),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                            widget.clearButtonIcon ?? Icons.clear,
-                            size: widget.clearIconSize?? 20.0,
-                          ),
-                          SizedBox(
-                            width: 10.0,
-                          ),
-                          Text(widget.clearButtonText ?? 'Clear All')
-                        ],
-                      ),
-                      color: widget.clearButtonColor ?? Colors.black,
-                      textColor: widget.clearButtonTextColor,
-                      onPressed: () {
-                        _clearSelection();
                       },
                     ),
                   ),
