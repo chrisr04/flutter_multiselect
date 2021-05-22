@@ -140,6 +140,8 @@ class _SelectionModalState extends State<SelectionModal> {
             widget.clearButtonIcon ?? Icons.clear,
             size: widget.clearIconSize?? 20.0,
           ),
+          splashColor: Colors.transparent,
+          highlightColor: Colors.transparent,
           onPressed: () {
             _clearSelection();
           },
