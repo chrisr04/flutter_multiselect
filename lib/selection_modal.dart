@@ -172,7 +172,7 @@ class _SelectionModalState extends State<SelectionModal> {
                 children: <Widget>[
                   ButtonTheme(
                     height: 38.0,
-                    child: RaisedButton(
+                    child: MaterialButton(
                       shape: StadiumBorder(),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -197,7 +197,7 @@ class _SelectionModalState extends State<SelectionModal> {
                   ),
                   ButtonTheme(
                     height: 38.0,
-                    child: RaisedButton(
+                    child: MaterialButton(
                       shape: StadiumBorder(),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,

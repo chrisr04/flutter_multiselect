@@ -62,6 +62,7 @@ class MultiSelect extends FormField<dynamic> {
   final Color backgroundColorModal;
   final Color textItemColorModal;
   final Color textColorChipModal;
+  final String selectionModalName;
 
   MultiSelect(
       {FormFieldSetter<dynamic> onSaved,
@@ -124,12 +125,13 @@ class MultiSelect extends FormField<dynamic> {
       this.clearIconSize,
       this.saveIconSize,
       this.cancelIconSize,
+      this.selectionModalName = 'multiselect-selection-modal',
       this.searchBoxToolTipText})
       : super(
             onSaved: onSaved,
             validator: validator,
             initialValue: initialValue,
-            autovalidate: autovalidate,
+            autovalidateMode: autovalidate? AutovalidateMode.always : AutovalidateMode.disabled,
             builder: (FormFieldState<dynamic> state) {
               List<Widget> _buildSelectedOptions(dynamic values, state) {
                 List<Widget> selectedOptions = [];
@@ -156,6 +158,7 @@ class MultiSelect extends FormField<dynamic> {
                     var results = await Navigator.push(
                         state.context,
                         MaterialPageRoute<dynamic>(
+                          settings: RouteSettings(name: selectionModalName),
                           builder: (BuildContext context) => SelectionModal(
                               title: titleText,
                               backgroundColor: backgroundColorModal,
